@@ -16,8 +16,8 @@ def start_menu():
 def match_pointer():
     task_pointer = str(input("Please, make your choice:  "))
     match task_pointer:
-        # case '1':
-        #     task_1()
+        case '1':
+            task_1()
         # case '2':
         #     task_2()
         # case '3':
@@ -35,28 +35,49 @@ def match_pointer():
 
 
 def task_1():
-    print("GB Python homework. Stage 1. Task 1.")
+    print("""GB Python homework. Stage 1. Task 1.
+    Задание 1.
+    Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, 
+    является ли этот день выходным.
+    
+    Пример:
+    - 6 -> да
+    - 7 -> да
+    - 1 -> нет
+    """)
 
-    weekdays = {
-        Arbeitstage''
-        'Wochenende': {}
-    }
+    weekdays = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag']
+    day = int(input("Please, type in target weekday number:  "))
+
+    if 5 >= day >= 1:
+        print(f"No, {weekdays[day - 1]} (day {day}) is not a weekend. It's a business day, get back to work!")
+    elif 7 >= day >= 6:
+        print(f"Yes, {weekdays[day - 1]} (day {day}) is a weekend. Have some rest!")
+    else:
+        print("Wrong day number! Use numbers in range 1 - 7!")
+
+    something_else()
+
+
+def task_2():
+    pass
+
+
+def task_3():
+    pass
+
+
+def task_4():
+    pass
+
+
+def task_5():
+    pass
+
 
 if __name__ == '__main__':
     start_menu()
 
-
-
-
-#  Задание 1.
-#  Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
-#
-#     Пример:
-#
-# - 6 -> да
-# - 7 -> да
-# - 1 -> нет
-#
 #   Задание 2. Напишите программу для. проверки истинности утверждения ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z для всех значений предикат.
 #
 #  Задание 3. Напишите программу, которая принимает на вход координаты точки (X и Y), причём X ≠ 0 и Y ≠ 0 и выдаёт номер четверти плоскости, в которой находится эта точка (или на какой оси она находится).
