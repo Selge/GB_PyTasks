@@ -34,6 +34,14 @@ def match_pointer():
             match_pointer()
 
 
+def task_1():
+    print("GB Python homework. Stage 1. Task 1.")
+
+    weekdays = {
+        Arbeitstage''
+        'Wochenende': {}
+    }
+
 if __name__ == '__main__':
     start_menu()
 
