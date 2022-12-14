@@ -14,7 +14,7 @@ def start_menu():
 
 
 def match_pointer():
-    task_pointer = str(input("Please, make your choice:  "))
+    task_pointer = str(symbol_request("Please, make your choice:  ")).lower()
     match task_pointer:
         case '1':
             task_1()
@@ -27,7 +27,6 @@ def match_pointer():
         case '5':
             task_5()
         case 'q':
-            print("Well, see ya later. Bye!")
             sys.exit()
         case _:
             print("Please, use built-in options!")
@@ -35,20 +34,18 @@ def match_pointer():
 
 
 def task_1():
-    print("""GB Python homework. Stage 1. Task 1.
-    Задание 1.
-    Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, 
-    является ли этот день выходным.
-    
-    Пример:
-    - 6 -> да
-    - 7 -> да
-    - 1 -> нет
-    """)
+    """ Задание 1. """
 
+    # Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет,
+    # является ли этот день выходным.
+    # Пример:
+    # - 6 -> да
+    # - 7 -> да
+    # - 1 -> нет
+
+    print("GB Python homework. Stage 1. Task 1.")
     weekdays = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag']
-    request = "Please, type in target weekday number:  "
-    day = number_request(request)
+    day = int(symbol_request("Please, type in target weekday number:  "))
 
     if 5 >= day >= 1:
         print(f"No, {weekdays[day - 1]} (day {day}) is not a weekend. It's a business day, get back to work!")
@@ -56,66 +53,80 @@ def task_1():
         print(f"Yes, {weekdays[day - 1]} (day {day}) is a weekend. Have some rest!")
     else:
         print("Wrong day number! Use numbers in range 1 - 7!")
-        number_request(request)
+        task_1()
 
-    something_else()
+    something_else(task_1)
 
 
 def task_2():
-    print("""GB Python homework. Stage 1. Task 2.
-        Задание 2.
-        Напишите программу для проверки истинности утверждения ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z 
-        для всех значений предикат.
-        """)
+    """ Задание 2. """
+
+    #  Напишите программу для проверки истинности утверждения ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z
+    #  для всех значений предикат.
+
+    print("GB Python homework. Stage 1. Task 2.")
     pass
 
 
 def task_3():
-    print("""GB Python homework. Stage 1. Task 3.
-        Задание 3.
-        Напишите программу, которая принимает на вход координаты точки (X и Y), 
-        причём X ≠ 0 и Y ≠ 0 и выдаёт номер четверти плоскости, 
-        в которой находится эта точка (или на какой оси она находится).
+    """ Задание 3. """
 
-        Пример:
+    # Напишите программу, которая принимает на вход координаты точки (X и Y),
+    # причём X ≠ 0 и Y ≠ 0 и выдаёт номер четверти плоскости,
+    # в которой находится эта точка (или на какой оси она находится).
+    # Пример:
+    # - x=34; y=-30 -> 4
+    # - x=2; y=4-> 1
+    # - x=-34; y=-30 -> 3
 
-        - x=34; y=-30 -> 4
-        - x=2; y=4-> 1
-        - x=-34; y=-30 -> 3
-        """)
+    print("GB Python homework. Stage 1. Task 3.")
     pass
 
 
 def task_4():
-    print("""GB Python homework. Stage 1. Task 4.
-        Задание 4.
-        Напишите программу, которая по заданному номеру четверти, 
-        показывает диапазон возможных координат точек в этой четверти (x и y).
-        """)
+    """ Задание 4. """
+
+    # Напишите программу, которая по заданному номеру четверти,
+    # показывает диапазон возможных координат точек в этой четверти (x и y).
+
+    print("GB Python homework. Stage 1. Task 4.")
     pass
 
 
 def task_5():
-    print("""GB Python homework. Stage 1. Task 5.
-        Задание 5.
-        Напишите программу, которая принимает на вход координаты двух точек 
-        и находит расстояние между ними в 2D пространстве.
+    """ Задание 5. """
 
-        Пример:
+    # Напишите программу, которая принимает на вход координаты двух точек
+    # и находит расстояние между ними в 2D пространстве.
+    # Пример:
+    # - A (3,6); B (2,1) -> 5,09
+    # - A (7,-5); B (1,-1) -> 7,21
 
-        - A (3,6); B (2,1) -> 5,09
-        - A (7,-5); B (1,-1) -> 7,21
-        """)
+    print("GB Python homework. Stage 1. Task 5.")
     pass
 
 
-def number_request(request):
-    number = int(input(str(request)))
-    return number
+def symbol_request(request):
+    symbol = input(str(request))
+    return symbol
 
 
-def something_else():
-    pass
+def something_else(task):
+    print("""
+    Do you want something else?
+    Please, type:
+    'a' - to start the current task again
+    'm' - to get back to the main menu
+    'q' - to exit the program
+    """)
+    again = str(symbol_request("Please, make your choice:  ")).lower()
+    match again:
+        case 'a':
+            task()
+        case 'm':
+            start_menu()
+        case 'q':
+            sys.exit()
 
 
 if __name__ == '__main__':
