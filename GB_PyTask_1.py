@@ -80,6 +80,8 @@ def task_3():
     # - x=-34; y=-30 -> 3
 
     print("GB Python homework. Stage 1. Task 3.")
+    point_x = int(symbol_request("Please, set up 'x' coordinates:  "))
+    point_y = int(symbol_request("Please, set up 'y' coordinates:  "))
     pass
 
 
@@ -90,6 +92,7 @@ def task_4():
     # показывает диапазон возможных координат точек в этой четверти (x и y).
 
     print("GB Python homework. Stage 1. Task 4.")
+    quarter_num = int(symbol_request("Please, enter the quarter number:  "))
     pass
 
 
@@ -103,6 +106,10 @@ def task_5():
     # - A (7,-5); B (1,-1) -> 7,21
 
     print("GB Python homework. Stage 1. Task 5.")
+    point_a_x = int(symbol_request("Please, set up 'x' coordinates of the point 'A':  "))
+    point_a_y = int(symbol_request("Please, set up 'y' coordinates of the point 'A':  "))
+    point_b_x = int(symbol_request("Please, set up 'x' coordinates of the point 'B':  "))
+    point_b_y = int(symbol_request("Please, set up 'y' coordinates of the point 'B':  "))
     pass
 
 
