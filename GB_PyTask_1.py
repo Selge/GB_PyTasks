@@ -65,7 +65,7 @@ def task_2():
     #  для всех значений предикат.
 
     print("GB Python homework. Stage 1. Task 2.")
-    pass
+    something_else(task_2)
 
 
 def task_3():
@@ -82,7 +82,7 @@ def task_3():
     print("GB Python homework. Stage 1. Task 3.")
     point_x = int(symbol_request("Please, set up 'x' coordinates:  "))
     point_y = int(symbol_request("Please, set up 'y' coordinates:  "))
-    pass
+    something_else(task_3)
 
 
 def task_4():
@@ -93,7 +93,7 @@ def task_4():
 
     print("GB Python homework. Stage 1. Task 4.")
     quarter_num = int(symbol_request("Please, enter the quarter number:  "))
-    pass
+    something_else(task_4)
 
 
 def task_5():
@@ -110,7 +110,7 @@ def task_5():
     point_a_y = int(symbol_request("Please, set up 'y' coordinates of the point 'A':  "))
     point_b_x = int(symbol_request("Please, set up 'x' coordinates of the point 'B':  "))
     point_b_y = int(symbol_request("Please, set up 'y' coordinates of the point 'B':  "))
-    pass
+    something_else(task_5)
 
 
 def symbol_request(request):
