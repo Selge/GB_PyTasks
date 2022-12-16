@@ -60,7 +60,7 @@ def task_1():
         print("Wrong day number! Use numbers in range 1 - 7!")
         task_1()
 
-    something_else(task_1)
+    anything_else(task_1)
 
 
 def task_2():
@@ -81,7 +81,7 @@ def task_2():
     else:
         print("The statement is false.")
 
-    something_else(task_2)
+    anything_else(task_2)
 
 
 def task_3():
@@ -112,7 +112,7 @@ def task_3():
     elif float('inf') > point_x > 0 > point_y > float('-inf'):
         print(f"The coordinates {point_x}.{point_y} belong to the fourth quarter.")
 
-    something_else(task_3)
+    anything_else(task_3)
 
 
 def task_4():
@@ -123,13 +123,22 @@ def task_4():
 
     print("GB Python homework. Stage 1. Task 4.")
 
+    quarters = {
+        1: "Available coordinates: x: 0 to infinity; y: 0 to infinity.",
+        2: "Available coordinates: x: negative infinity to 0; y: 0 to infinity.",
+        3: "Available coordinates: x: negative infinity to 0; y: negative infinity to 0.",
+        4: "Available coordinates: x: 0 to infinity; y: negative infinity to 0."
+    }
+
     try:
         quarter_num = int(symbol_request("Please, enter the quarter number:  "))
     except ValueError:
         print("Invalid data type!")
-        task_3()
+        task_4()
 
-    something_else(task_4)
+    print(quarters[quarter_num])
+
+    anything_else(task_4)
 
 
 def task_5():
@@ -154,7 +163,7 @@ def task_5():
     coordinates = (((point_b_x - point_a_x) ** 2 + (point_b_y - point_a_y) ** 2) ** 0.5)
     print(f"The distance between point A {point_a_x, point_a_y} and point B {point_b_x, point_b_y} is: {coordinates:5.2f}")
 
-    something_else(task_5)
+    anything_else(task_5)
 
 
 def symbol_request(request):
@@ -162,9 +171,9 @@ def symbol_request(request):
     return symbol
 
 
-def something_else(task):
+def anything_else(task):
     print("""
-    Do you want something else?
+    Do you want anything else?
     Please, type:
     'a' - to start the current task again
     'm' - to get back to the main menu
