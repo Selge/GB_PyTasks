@@ -45,7 +45,12 @@ def task_1():
 
     print("GB Python homework. Stage 1. Task 1.")
     weekdays = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag']
-    day = int(symbol_request("Please, type in target weekday number:  "))
+
+    try:
+        day = int(symbol_request("Please, type in target weekday number:  "))
+    except ValueError:
+        print("Invalid data type!")
+        task_1()
 
     if 5 >= day >= 1:
         print(f"No, {weekdays[day - 1]} (day {day}) is not a weekend. It's a business day, get back to work!")
@@ -59,6 +64,7 @@ def task_1():
 
 
 def task_2():
+
     """ Задание 2. """
 
     #  Напишите программу для проверки истинности утверждения ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z
@@ -116,10 +122,14 @@ def task_5():
     # - A (7,-5); B (1,-1) -> 7,21
 
     print("GB Python homework. Stage 1. Task 5.")
-    point_a_x = int(symbol_request("Please, set up 'x' coordinates of the point 'A':  "))
-    point_a_y = int(symbol_request("Please, set up 'y' coordinates of the point 'A':  "))
-    point_b_x = int(symbol_request("Please, set up 'x' coordinates of the point 'B':  "))
-    point_b_y = int(symbol_request("Please, set up 'y' coordinates of the point 'B':  "))
+    try:
+        point_a_x = int(symbol_request("Please, set up 'x' coordinates of the point 'A':  "))
+        point_a_y = int(symbol_request("Please, set up 'y' coordinates of the point 'A':  "))
+        point_b_x = int(symbol_request("Please, set up 'x' coordinates of the point 'B':  "))
+        point_b_y = int(symbol_request("Please, set up 'y' coordinates of the point 'B':  "))
+    except ValueError:
+        print("Invalid data type!")
+        task_5()
 
     coordinates = (((point_b_x - point_a_x) ** 2 + (point_b_y - point_a_y) ** 2) ** 0.5)
     print(f"The distance between point A {point_a_x, point_a_y} and point B {point_b_x, point_b_y} is: {coordinates:5.2f}")
