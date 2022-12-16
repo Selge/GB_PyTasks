@@ -96,8 +96,13 @@ def task_3():
     # - x=-34; y=-30 -> 3
 
     print("GB Python homework. Stage 1. Task 3.")
-    point_x = int(symbol_request("Please, set up 'x' coordinates:  "))
-    point_y = int(symbol_request("Please, set up 'y' coordinates:  "))
+    try:
+        point_x = int(symbol_request("Please, set up 'x' coordinates:  "))
+        point_y = int(symbol_request("Please, set up 'y' coordinates:  "))
+    except ValueError:
+        print("Invalid data type!")
+        task_3()
+
     something_else(task_3)
 
 
@@ -108,7 +113,13 @@ def task_4():
     # показывает диапазон возможных координат точек в этой четверти (x и y).
 
     print("GB Python homework. Stage 1. Task 4.")
-    quarter_num = int(symbol_request("Please, enter the quarter number:  "))
+
+    try:
+        quarter_num = int(symbol_request("Please, enter the quarter number:  "))
+    except ValueError:
+        print("Invalid data type!")
+        task_3()
+
     something_else(task_4)
 
 
