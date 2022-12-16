@@ -122,7 +122,7 @@ def task_5():
     point_b_y = int(symbol_request("Please, set up 'y' coordinates of the point 'B':  "))
 
     coordinates = (((point_b_x - point_a_x) ** 2 + (point_b_y - point_a_y) ** 2) ** 0.5)
-    print(f"The distance between point A {point_a_x, point_a_y} and point B {point_b_x, point_b_y} is: {coordinates}")
+    print(f"The distance between point A {point_a_x, point_a_y} and point B {point_b_x, point_b_y} is: {coordinates:5.2f}")
 
     something_else(task_5)
 
