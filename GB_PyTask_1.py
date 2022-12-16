@@ -72,9 +72,13 @@ def task_2():
 
     print("GB Python homework. Stage 1. Task 2.")
 
-    x = bool(symbol_request("Please, set up 'X' value:  "))
-    y = bool(symbol_request("Please, set up 'Y' value:  "))
-    z = bool(symbol_request("Please, set up 'Z' value:  "))
+    try:
+        x = bool(symbol_request("Please, set up 'X' value:  "))
+        y = bool(symbol_request("Please, set up 'Y' value:  "))
+        z = bool(symbol_request("Please, set up 'Z' value:  "))
+    except ValueError:
+        print("Invalid data type!")
+        task_2()
 
     if (not (x or y or z)) == (not x and not y and not z):
         print("The statement is true.")
@@ -136,7 +140,11 @@ def task_4():
         print("Invalid data type!")
         task_4()
 
-    print(quarters[quarter_num])
+    if 4 >= quarter_num >= 1:
+        print(quarters[quarter_num])
+    else:
+        print("Wrong quarter number! Use digits from 1 to 4.")
+        task_4()
 
     anything_else(task_4)
 
