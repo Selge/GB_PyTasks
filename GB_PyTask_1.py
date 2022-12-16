@@ -103,6 +103,15 @@ def task_3():
         print("Invalid data type!")
         task_3()
 
+    if float('inf') > point_x > 0 and float('inf') > point_y > 0:
+        print(f"The coordinates {point_x}.{point_y} belong to the first quarter.")
+    elif float('-inf') < point_x < 0 < point_y < float('inf'):
+        print(f"The coordinates {point_x}.{point_y} belong to the second quarter.")
+    elif float('-inf') < point_x < 0 and float('-inf') < point_y < 0:
+        print(f"The coordinates {point_x}.{point_y} belong to the third quarter.")
+    elif float('inf') > point_x > 0 > point_y > float('-inf'):
+        print(f"The coordinates {point_x}.{point_y} belong to the fourth quarter.")
+
     something_else(task_3)
 
 
