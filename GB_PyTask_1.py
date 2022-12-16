@@ -65,6 +65,16 @@ def task_2():
     #  для всех значений предикат.
 
     print("GB Python homework. Stage 1. Task 2.")
+
+    x = bool(symbol_request("Please, set up 'X' value:  "))
+    y = bool(symbol_request("Please, set up 'Y' value:  "))
+    z = bool(symbol_request("Please, set up 'Z' value:  "))
+
+    if (not (x or y or z)) == (not x and not y and not z):
+        print("The statement is true.")
+    else:
+        print("The statement is false.")
+
     something_else(task_2)
 
 
