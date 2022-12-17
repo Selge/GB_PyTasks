@@ -1,13 +1,14 @@
 import unittest
-from GB_PyTask_1 import *
+import pytest
+from GB_PyTask_1 import task_1, task_2, task_3, task_4, task_5
 
 
-class TestMethods(unittest.TestCase):
+class TestMethods():
 
     def test_usual_weekday_number(self):
         """Testing Stage 1. Task 1. Normal weekday number as input."""
-        test_day = task_1()
-
+        test_func = task_1()
+        self.assertEqual(5, "No, Freitag (day 5) is not a weekend. It's a business day, get back to work!")
         pass
 
     def test_wrong_weekday_number(self):

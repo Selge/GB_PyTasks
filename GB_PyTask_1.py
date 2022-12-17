@@ -195,6 +195,9 @@ def anything_else(task):
             start_menu()
         case 'q':
             sys.exit()
+        case _:
+            print("Please, use built-in options!")
+            anything_else(task)
 
 
 if __name__ == '__main__':
