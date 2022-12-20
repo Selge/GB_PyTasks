@@ -53,3 +53,16 @@ def task_4():
     # Реализуйте алгоритм перемешивания списка.
 
     print("GB Python homework. Stage 2. Task 4.")
+
+
+# In case import doesn't work, please, uncomment the code below, and you'll be all set:
+# def symbol_request(request, datatype):
+#     request = request
+#     datatype = datatype
+#     try:
+#         symbol = datatype(input(request))
+#     except ValueError:
+#         print("Invalid data type!")
+#         symbol_request(request, datatype)
+#
+#     return symbol
