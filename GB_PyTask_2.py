@@ -17,6 +17,8 @@ def task_1():
         print("Invalid data type!")
         task_1()
 
+    print(sum(map(int,str(str(number).replace('.', '')))))
+
 
 def task_2():
     """ Задание 2. """
@@ -28,11 +30,18 @@ def task_2():
     print("GB Python homework. Stage 2. Task 2.")
 
     try:
-        number = int(symbol_request("Please, type in target weekday number:  "))
+        number = int(symbol_request("Please, type in target number:  "))
     except ValueError:
         print("Invalid data type!")
         task_2()
 
+    factorial = lambda x: 1 if x == 0 else x * factorial(x - 1)
+
+    result = []
+    for i in range(1, number + 1):
+        result.append(factorial(i))
+
+    print(result)
 
 
 def task_3():
