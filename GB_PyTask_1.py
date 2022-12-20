@@ -14,7 +14,7 @@ def start_menu():
 
 
 def match_pointer():
-    task_pointer = str(symbol_request("Please, make your choice:  ")).lower()
+    task_pointer = symbol_request("Please, make your choice:  ", str).lower()
     match task_pointer:
         case '1':
             task_1()
@@ -46,11 +46,7 @@ def task_1():
     print("GB Python homework. Stage 1. Task 1.")
     weekdays = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag']
 
-    try:
-        day = int(symbol_request("Please, type in target weekday number:  "))
-    except ValueError:
-        print("Invalid data type!")
-        task_1()
+    day = symbol_request("Please, type in target weekday number:  ", int)
 
     if 5 >= day >= 1:
         print(f"No, {weekdays[day - 1]} (day {day}) is not a weekend. It's a business day, get back to work!")
@@ -71,14 +67,9 @@ def task_2():
     #  для всех значений предикат.
 
     print("GB Python homework. Stage 1. Task 2.")
-
-    try:
-        x = bool(symbol_request("Please, set up 'X' value:  "))
-        y = bool(symbol_request("Please, set up 'Y' value:  "))
-        z = bool(symbol_request("Please, set up 'Z' value:  "))
-    except ValueError:
-        print("Invalid data type!")
-        task_2()
+    x = bool(symbol_request("Please, set up 'X' value:  "))
+    y = bool(symbol_request("Please, set up 'Y' value:  "))
+    z = bool(symbol_request("Please, set up 'Z' value:  "))
 
     if (not (x or y or z)) == (not x and not y and not z):
         print("The statement is true.")
@@ -100,12 +91,8 @@ def task_3():
     # - x=-34; y=-30 -> 3
 
     print("GB Python homework. Stage 1. Task 3.")
-    try:
-        point_x = int(symbol_request("Please, set up 'x' coordinates:  "))
-        point_y = int(symbol_request("Please, set up 'y' coordinates:  "))
-    except ValueError:
-        print("Invalid data type!")
-        task_3()
+    point_x = int(symbol_request("Please, set up 'x' coordinates:  "))
+    point_y = int(symbol_request("Please, set up 'y' coordinates:  "))
 
     if float('inf') > point_x > 0 and float('inf') > point_y > 0:
         print(f"The coordinates {point_x}.{point_y} belong to the first quarter.")
@@ -134,11 +121,7 @@ def task_4():
         4: "Available coordinates: x: 0 to infinity; y: negative infinity to 0."
     }
 
-    try:
-        quarter_num = int(symbol_request("Please, enter the quarter number:  "))
-    except ValueError:
-        print("Invalid data type!")
-        task_4()
+    quarter_num = int(symbol_request("Please, enter the quarter number:  "))
 
     if 4 >= quarter_num >= 1:
         print(quarters[quarter_num])
@@ -159,14 +142,11 @@ def task_5():
     # - A (7,-5); B (1,-1) -> 7,21
 
     print("GB Python homework. Stage 1. Task 5.")
-    try:
-        point_a_x = int(symbol_request("Please, set up 'x' coordinates of the point 'A':  "))
-        point_a_y = int(symbol_request("Please, set up 'y' coordinates of the point 'A':  "))
-        point_b_x = int(symbol_request("Please, set up 'x' coordinates of the point 'B':  "))
-        point_b_y = int(symbol_request("Please, set up 'y' coordinates of the point 'B':  "))
-    except ValueError:
-        print("Invalid data type!")
-        task_5()
+
+    point_a_x = int(symbol_request("Please, set up 'x' coordinates of the point 'A':  "))
+    point_a_y = int(symbol_request("Please, set up 'y' coordinates of the point 'A':  "))
+    point_b_x = int(symbol_request("Please, set up 'x' coordinates of the point 'B':  "))
+    point_b_y = int(symbol_request("Please, set up 'y' coordinates of the point 'B':  "))
 
     coordinates = (((point_b_x - point_a_x) ** 2 + (point_b_y - point_a_y) ** 2) ** 0.5)
     print(f"The distance between point A {point_a_x, point_a_y} and point B {point_b_x, point_b_y} is: {coordinates:5.2f}")
@@ -174,8 +154,15 @@ def task_5():
     anything_else(task_5)
 
 
-def symbol_request(request):
-    symbol = input(str(request))
+def symbol_request(request, datatype):
+    request = request
+    datatype = datatype
+    try:
+        symbol = datatype(input(request))
+    except ValueError:
+        print("Invalid data type!")
+        symbol_request(request, datatype)
+
     return symbol
 
 
@@ -187,7 +174,7 @@ def anything_else(task):
     'm' - to get back to the main menu
     'q' - to exit the program
     """)
-    again = str(symbol_request("Please, make your choice:  ")).lower()
+    again = symbol_request("Please, make your choice:  ", str).lower()
     match again:
         case 'a':
             task()
