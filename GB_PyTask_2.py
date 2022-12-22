@@ -1,4 +1,5 @@
 import random
+from random import shuffle
 from GB_PyTask_1 import symbol_request
 
 
@@ -59,7 +60,6 @@ def task_4():
     # Задайте список из N элементов, заполненных числами из промежутка [-N, N].
     # Найдите произведение элементов на указанных позициях.
     # Позиции хранятся в файле file.txt в одной строке одно число.
-    # Реализуйте алгоритм перемешивания списка.
 
     print("GB Python homework. Stage 2. Task 4.")
 
@@ -68,7 +68,10 @@ def task_4():
     for e in range(n + 1):
         e = random.randint(-n, n + 1)
         n_list.append(e)
-    print(n_list)
+
+    
+
+
 
 
 def task_5():
@@ -78,7 +81,7 @@ def task_5():
 
     print("GB Python homework. Stage 2. Task 5.")
 
-    
+
 
 
 # In case import doesn't work, please, uncomment the code below, and you'll be all set:
@@ -92,3 +95,6 @@ def task_5():
 #         symbol_request(request, datatype)
 #
 #     return symbol
+
+if __name__ == '__main__':
+    task_4()
