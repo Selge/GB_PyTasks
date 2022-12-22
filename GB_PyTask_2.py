@@ -43,6 +43,11 @@ def task_3():
 
     print("GB Python homework. Stage 2. Task 3.")
 
+    n = symbol_request()
+    lst = [round((1 + 1 / i) ** i, 3) for i in range(1, n + 1)]
+
+
+
 
 def task_4():
     """ Задание 4. """
