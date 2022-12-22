@@ -50,7 +50,7 @@ def task_3():
     for i in range(1, n + 1):
         n_dict[i] = round(((1 + 1 / i) ** i), 2)
         n_list.append(n_dict[i])
-    print(f"{n_dict}\n{sum(n_list)}")
+    print(f"Sequence: {n_dict}\nSum:  {sum(n_list)}")
 
 
 def task_4():
@@ -69,6 +69,17 @@ def task_4():
         e = random.randint(-n, n + 1)
         n_list.append(e)
     print(n_list)
+
+
+def task_5():
+    """ Задание 5. """
+
+    # Реализуйте алгоритм перемешивания списка.
+
+    print("GB Python homework. Stage 2. Task 5.")
+
+    
+
 
 # In case import doesn't work, please, uncomment the code below, and you'll be all set:
 # def symbol_request(request, datatype):
