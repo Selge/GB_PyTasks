@@ -1,6 +1,5 @@
 import random
-import math
-from random import shuffle
+
 from GB_PyTask_1 import symbol_request
 
 
@@ -67,16 +66,15 @@ def task_4():
     n = symbol_request("Please, set up the target value:  ", int)
     n_list = []
     for e in range(n + 1):
-        e = random.randint(-n, n + 1)
-        n_list.append(e)
+        n_list.append(random.randint(-n, n + 1))
     print(f"Our list: {n_list}")
 
     # Получаем набор позиций в списке. Я взял четверть всех позиций списка (чтоб было интереснее), поэтому 4
     #  Здесь можно было наверное упростить, но я использовал множество, чтобы избежать повторения позиций элементов.
     positions = set()
     for g in range(round(len(n_list) / 4)):
-        g = random.randint(0, len(n_list) - 1)
-        positions.add(g)
+        positions.add(random.randint(0, len(n_list) - 1))
+
     # Записываем позиции в файл построчно
     with open(r"file.txt", "w") as file:
         for i in positions:
@@ -97,8 +95,19 @@ def task_5():
 
     print("GB Python homework. Stage 2. Task 5.")
 
+    white_list = []
+    white_list_length = symbol_request("Please, set up the target list length:  ", int)
+    for i in range(white_list_length):
+        white_list.append(random.randint(-98, 99))
 
+    black_list = white_list[:]
+    for b in range(len(black_list)):
+        index = random.randint(0, len(black_list) - 1)
+        temp = black_list[b]
+        black_list[b] = black_list[index]
+        black_list[index] = temp
 
+    print(f"Original list: {white_list}.\nShuffled list: {black_list}")
 
 # In case import doesn't work, please, uncomment the code below, and you'll be all set:
 # def symbol_request(request, datatype):
@@ -111,6 +120,3 @@ def task_5():
 #         symbol_request(request, datatype)
 #
 #     return symbol
-
-if __name__ == '__main__':
-    task_4()
