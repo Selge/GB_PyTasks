@@ -1,4 +1,5 @@
 import random
+import math
 from random import shuffle
 from GB_PyTask_1 import symbol_request
 
@@ -62,16 +63,31 @@ def task_4():
     # Позиции хранятся в файле file.txt в одной строке одно число.
 
     print("GB Python homework. Stage 2. Task 4.")
-
+    # Получаем желаемый список.
     n = symbol_request("Please, set up the target value:  ", int)
     n_list = []
     for e in range(n + 1):
         e = random.randint(-n, n + 1)
         n_list.append(e)
+    print(f"Our list: {n_list}")
 
-    
+    # Получаем набор позиций в списке. Я взял четверть всех позиций списка (чтоб было интереснее), поэтому 4
+    #  Здесь можно было наверное упростить, но я использовал множество, чтобы избежать повторения позиций элементов.
+    positions = set()
+    for g in range(round(len(n_list) / 4)):
+        g = random.randint(0, len(n_list) - 1)
+        positions.add(g)
+    # Записываем позиции в файл построчно
+    with open(r"file.txt", "w") as file:
+        for i in positions:
+            file.write(f"{i}\n")
 
-
+    # Читаем позиции из файла и получаем произведение чисел, стоящих на указанных местах:
+    total = 1
+    with open(r"file.txt", "r") as file:
+        for line in file:
+            total *= n_list[int(line)]
+    print(f"Total: {total:,.0f}".replace(',', ' '))
 
 
 def task_5():

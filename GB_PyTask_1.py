@@ -67,9 +67,9 @@ def task_2():
     #  для всех значений предикат.
 
     print("GB Python homework. Stage 1. Task 2.")
-    x = bool(symbol_request("Please, set up 'X' value:  "))
-    y = bool(symbol_request("Please, set up 'Y' value:  "))
-    z = bool(symbol_request("Please, set up 'Z' value:  "))
+    x = bool(symbol_request("Please, set up 'X' value:  ", bool))
+    y = bool(symbol_request("Please, set up 'Y' value:  ", bool))
+    z = bool(symbol_request("Please, set up 'Z' value:  ", bool))
 
     if (not (x or y or z)) == (not x and not y and not z):
         print("The statement is true.")
@@ -91,8 +91,8 @@ def task_3():
     # - x=-34; y=-30 -> 3
 
     print("GB Python homework. Stage 1. Task 3.")
-    point_x = int(symbol_request("Please, set up 'x' coordinates:  "))
-    point_y = int(symbol_request("Please, set up 'y' coordinates:  "))
+    point_x = int(symbol_request("Please, set up 'x' coordinates:  ", int))
+    point_y = int(symbol_request("Please, set up 'y' coordinates:  ", int))
 
     if float('inf') > point_x > 0 and float('inf') > point_y > 0:
         print(f"The coordinates {point_x}.{point_y} belong to the first quarter.")
@@ -121,7 +121,7 @@ def task_4():
         4: "Available coordinates: x: 0 to infinity; y: negative infinity to 0."
     }
 
-    quarter_num = int(symbol_request("Please, enter the quarter number:  "))
+    quarter_num = int(symbol_request("Please, enter the quarter number:  ", int))
 
     if 4 >= quarter_num >= 1:
         print(quarters[quarter_num])
@@ -143,10 +143,10 @@ def task_5():
 
     print("GB Python homework. Stage 1. Task 5.")
 
-    point_a_x = int(symbol_request("Please, set up 'x' coordinates of the point 'A':  "))
-    point_a_y = int(symbol_request("Please, set up 'y' coordinates of the point 'A':  "))
-    point_b_x = int(symbol_request("Please, set up 'x' coordinates of the point 'B':  "))
-    point_b_y = int(symbol_request("Please, set up 'y' coordinates of the point 'B':  "))
+    point_a_x = int(symbol_request("Please, set up 'x' coordinates of the point 'A':  ", int))
+    point_a_y = int(symbol_request("Please, set up 'y' coordinates of the point 'A':  ", int))
+    point_b_x = int(symbol_request("Please, set up 'x' coordinates of the point 'B':  ", int))
+    point_b_y = int(symbol_request("Please, set up 'y' coordinates of the point 'B':  ", int))
 
     coordinates = (((point_b_x - point_a_x) ** 2 + (point_b_y - point_a_y) ** 2) ** 0.5)
     print(f"The distance between point A {point_a_x, point_a_y} and point B {point_b_x, point_b_y} is: {coordinates:5.2f}")
