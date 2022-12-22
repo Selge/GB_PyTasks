@@ -1,3 +1,4 @@
+import random
 from GB_PyTask_1 import symbol_request
 
 
@@ -41,17 +42,15 @@ def task_3():
     # Пример:
     # - Для n = 6: {1: 4, 2: 7, 3: 10, 4: 13, 5: 16, 6: 19}
 
-    # На этом моменте я не совсем понял, почему в примере такие результаты, честно просмотрел даже учебник по алгебре:
-    # http://oldskola1.narod.ru/Kochetkov1/Kochetkov134.htm
-
-
     print("GB Python homework. Stage 2. Task 3.")
 
     n = symbol_request("Please, set up target number:  ", int)
     n_dict = {}
+    n_list = []
     for i in range(1, n + 1):
         n_dict[i] = round(((1 + 1 / i) ** i), 2)
-    print(n_dict)
+        n_list.append(n_dict[i])
+    print(f"{n_dict}\n{sum(n_list)}")
 
 
 def task_4():
@@ -65,8 +64,11 @@ def task_4():
     print("GB Python homework. Stage 2. Task 4.")
 
     n = symbol_request("Please, set up the target value:  ", int)
-
-
+    n_list = []
+    for e in range(n + 1):
+        e = random.randint(-n, n + 1)
+        n_list.append(e)
+    print(n_list)
 
 # In case import doesn't work, please, uncomment the code below, and you'll be all set:
 # def symbol_request(request, datatype):
