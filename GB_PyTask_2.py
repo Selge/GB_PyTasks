@@ -44,10 +44,10 @@ def task_3():
     print("GB Python homework. Stage 2. Task 3.")
 
     n = symbol_request("Please, set up target number:  ", int)
-    result = [round((1 + 1 / i) ** i) for i in range(1, n + 1)]
-    for i in result:
-        print()
-
+    n_dict = {}
+    for i in range(1, n + 1):
+        n_dict[i] = round(((1 + 1 / i) ** i), 2)
+    print(n_dict)
 
 
 def task_4():
