@@ -41,6 +41,10 @@ def task_3():
     # Пример:
     # - Для n = 6: {1: 4, 2: 7, 3: 10, 4: 13, 5: 16, 6: 19}
 
+    # На этом моменте я не совсем понял, почему в примере такие результаты, честно просмотрел даже учебник по алгебре:
+    # http://oldskola1.narod.ru/Kochetkov1/Kochetkov134.htm
+
+
     print("GB Python homework. Stage 2. Task 3.")
 
     n = symbol_request("Please, set up target number:  ", int)
@@ -59,6 +63,9 @@ def task_4():
     # Реализуйте алгоритм перемешивания списка.
 
     print("GB Python homework. Stage 2. Task 4.")
+
+    n = symbol_request("Please, set up the target value:  ", int)
+
 
 
 # In case import doesn't work, please, uncomment the code below, and you'll be all set:
