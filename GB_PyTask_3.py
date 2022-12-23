@@ -40,10 +40,17 @@ def task_2():
     print("GB Python homework. Stage 3. Task 2.")
 
     pairs = list_maker(int)
-    for i in pairs:
 
+    if len(pairs) % 2 == 0:
+        pair = len(pairs) // 2
+    else:
+        pair = len(pairs) // 2 + 1
 
+    results = []
+    for i in range(pair):
+        results.append(pairs[i] * pairs[len(pairs) - i - 1])
 
+    print(f"Your income list is: {pairs}, outcome list sum is: {results}")
 
 def task_3():
     """ Задание 3. """
