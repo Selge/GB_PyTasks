@@ -21,7 +21,11 @@ def task_1():
     print("GB Python homework. Stage 3. Task 1.")
 
     task_list = list_maker(int)
-    print(f"Your list is{task_list}, list sum is: {sum(task_list)}")
+    summary = 0
+    for i in range(len(task_list)):
+        if i % 2 != 0:
+            summary += task_list[i]
+    print(f"Your list is: {task_list}, list sum is: {summary}")
 
 
 def task_2():
@@ -37,6 +41,7 @@ def task_2():
 
     pairs = list_maker(int)
     for i in pairs:
+
 
 
 
