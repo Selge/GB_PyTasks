@@ -78,6 +78,7 @@ def task_5():
 
     print("GB Python homework. Stage 3. Task 5.")
 
+    number = symbol_request("Please, enter target number:  ", int)
 
 # In case import doesn't work, please, uncomment the code below, and you'll be all set:
 # def symbol_request(request, datatype):
