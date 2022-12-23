@@ -65,7 +65,6 @@ def task_3():
     third_list = list_maker(float)
 
 
-
 def task_4():
     """ Задание 4. """
 
@@ -77,7 +76,8 @@ def task_4():
 
     print("GB Python homework. Stage 3. Task 4.")
 
-    number = symbol_request("Please, enter target number:  ", float)
+    number = symbol_request("Please, enter target number:  ", int)
+    print(f"Your number is: {number}, your binary number is: {number: b}.")
 
 
 def task_5():
