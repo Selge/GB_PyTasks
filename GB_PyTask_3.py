@@ -2,6 +2,14 @@ import random
 from GB_PyTask_1 import symbol_request
 
 
+def list_maker():
+    list_len = symbol_request("Please, set the target list length:  ", int)
+    task_list = []
+    for i in range(list_len):
+        task_list.append(random.randint(0, 100))
+    return task_list
+
+
 def task_1():
     """ Задание 1. """
 
@@ -12,10 +20,7 @@ def task_1():
 
     print("GB Python homework. Stage 3. Task 1.")
 
-    list_len = symbol_request("Please, set the target list length:  ", int)
-    task_list = []
-    for i in range(list_len):
-        task_list.append(random.randint(0, 100))
+    task_list = list_maker()
     print(f"Your list is{task_list}, list sum is: {sum(task_list)}")
 
 def task_2():
