@@ -14,8 +14,9 @@ def task_1():
 
     list_len = symbol_request("Please, set the target list length:  ", int)
     task_list = []
-    for i in range(list_len + 1):
+    for i in range(list_len):
         task_list.append(random.randint(0, 100))
+    print(f"Your list is{task_list}, list sum is: {sum(task_list)}")
 
 def task_2():
     """ Задание 2. """
