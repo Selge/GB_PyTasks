@@ -11,6 +11,8 @@ def task_1():
 
     print("GB Python homework. Stage 3. Task 1.")
 
+    list_len = symbol_request("Please, set the target list length:  ", int)
+
 
 def task_2():
     """ Задание 2. """
