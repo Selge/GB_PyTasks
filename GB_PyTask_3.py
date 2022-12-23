@@ -1,3 +1,4 @@
+import random
 from GB_PyTask_1 import symbol_request
 
 
@@ -12,7 +13,9 @@ def task_1():
     print("GB Python homework. Stage 3. Task 1.")
 
     list_len = symbol_request("Please, set the target list length:  ", int)
-
+    task_list = []
+    for i in range(list_len + 1):
+        task_list.append(random.randint(0, 100))
 
 def task_2():
     """ Задание 2. """
