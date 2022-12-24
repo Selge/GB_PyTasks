@@ -31,7 +31,7 @@ def task_1():
         if i % 2 != 0:
             summary += task_list[i]
 
-    print(f"Your list is: {task_list}, list sum is: {summary}")
+    print(f"Your list is: {task_list}, odd places sum is: {summary}")
 
 
 def task_2():
@@ -147,3 +147,7 @@ def fibonacci(n):
 #         symbol_request(request, datatype)
 #
 #     return symbol
+
+
+if __name__ == '__main__':
+    task_1()
