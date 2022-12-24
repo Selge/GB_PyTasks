@@ -52,6 +52,7 @@ def task_2():
 
     print(f"Your income list is: {pairs}, outcome list sum is: {results}")
 
+
 def task_3():
     """ Задание 3. """
 
@@ -77,6 +78,7 @@ def task_3():
     result = max(cut_list) - min(cut_list)
 
     print(f"Your incoming list:  {third_list}. Fractional difference: {result}.")
+
 
 def task_4():
     """ Задание 4. """
