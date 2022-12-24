@@ -105,12 +105,26 @@ def task_5():
     print("GB Python homework. Stage 3. Task 5.")
 
     number = symbol_request("Please, enter target number:  ", int)
-    print(f"{fibonacci(number)}")
+    print(f"Fibonacci list for {number} is:  {fibonacci(number)}.")
 
 
-def fibonacci(digit):
-    if digit in whatever:
-        pass
+def fibonacci(n):
+
+    m = n + 1
+    pos_arr = [0] * m
+    pos_arr[1] = 1
+    neg_arr = [0] * n
+    neg_arr[-1] = 1
+
+    for i in range(2, m):
+        pos_arr[i] = pos_arr[i-1] + pos_arr[i-2]
+
+    for i in range(2, m):
+        neg_arr[-i] = neg_arr[-i+2] - neg_arr[-i+1]
+
+    fibo_arr = neg_arr + pos_arr
+
+    return fibo_arr
 
 
 # In case import doesn't work, please, uncomment the code below, and you'll be all set:
@@ -124,7 +138,3 @@ def fibonacci(digit):
 #         symbol_request(request, datatype)
 #
 #     return symbol
-
-
-if __name__ == '__main__':
-    task_3()
