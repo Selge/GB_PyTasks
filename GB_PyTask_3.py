@@ -74,10 +74,7 @@ def task_3():
             cut_list.append((int(add_cut)) * 10)
         else:
             cut_list.append(int(add_cut))
-    print(third_list)
-    print(cut_list)
     result = max(cut_list) - min(cut_list)
-    print(result)
 
     print(f"Your incoming list:  {third_list}. Fractional difference: {result}.")
 
