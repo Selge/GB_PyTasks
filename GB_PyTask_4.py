@@ -12,6 +12,8 @@ def task_1():
 
     print("GB Python homework. Stage 4. Task 1.")
 
+    number = symbol_request("Please, set the target number:  ", int)
+
 def task_2():
     """ Задание 2. """
 
@@ -19,12 +21,20 @@ def task_2():
 
     print("GB Python homework. Stage 4. Task 2.")
 
+    number = symbol_request("Please, set the target number:  ", int)
+
 def task_3():
     """ Задание 3. """
 
 #     Задайте последовательность чисел. Напишите программу, которая выведет список неповторяющихся элементов исходной последовательности.
 
     print("GB Python homework. Stage 4. Task 3.")
+
+    numbers = list_maker(int)
+    uniq_numbers = set(numbers)
+
+    print(f"Your incoming list is: {numbers}.\nThe outcoming list is: {uniq_numbers}.")
+
 
 def task_4():
     """ Задание 4. """
@@ -35,6 +45,8 @@ def task_4():
 # - k=2 => 2*x² + 4*x + 5 = 0 или x² + 5 = 0 или 10*x² = 0
 
     print("GB Python homework. Stage 4. Task 4.")
+
+    k = symbol_request("Please, set the target number:  ", int)
 
 
 def task_5():
@@ -64,3 +76,7 @@ def task_5():
 #     for i in range(list_len):
 #         task_list.append(random.randint(0, 100))
 #     return task_list
+
+
+if __name__ == '__main__':
+    task_3()
