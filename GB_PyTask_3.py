@@ -63,7 +63,7 @@ def task_3():
 
     print("GB Python homework. Stage 3. Task 3.")
 
-    list_len = list_maker(int)
+    list_len = symbol_request("Please, set the target list length:  ", int)
     third_list = []
     for i in range(len(list_len)):
         third_list.append(round(random.uniform(00.01, 99.99), 2))
@@ -110,17 +110,13 @@ def task_5():
 
 def fibonacci(n):
 
-    m = n + 1
-    pos_arr = [0] * m
-    pos_arr[1] = 1
+    pos_arr = [0] * (n + 1)
     neg_arr = [0] * n
-    neg_arr[-1] = 1
+    pos_arr[1] = neg_arr[-1] = 1
 
-    for i in range(2, m):
+    for i in range(2, (n + 1)):
         pos_arr[i] = pos_arr[i-1] + pos_arr[i-2]
-
-    for i in range(2, m):
-        neg_arr[-i] = neg_arr[-i+2] - neg_arr[-i+1]
+        neg_arr[-i] = neg_arr[-i + 2] - neg_arr[-i + 1]
 
     fibo_arr = neg_arr + pos_arr
 
