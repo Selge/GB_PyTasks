@@ -4,9 +4,12 @@ from GB_PyTask_1 import symbol_request
 
 def list_maker(digit_type):
     list_len = symbol_request("Please, set the target list length:  ", digit_type)
+
     task_list = []
+
     for i in range(list_len):
         task_list.append(random.randint(0, 100))
+
     return task_list
 
 
@@ -21,10 +24,13 @@ def task_1():
     print("GB Python homework. Stage 3. Task 1.")
 
     task_list = list_maker(int)
+
     summary = 0
+
     for i in range(len(task_list)):
         if i % 2 != 0:
             summary += task_list[i]
+
     print(f"Your list is: {task_list}, list sum is: {summary}")
 
 
@@ -47,6 +53,7 @@ def task_2():
         pair = len(pairs) // 2 + 1
 
     results = []
+
     for i in range(pair):
         results.append(pairs[i] * pairs[len(pairs) - i - 1])
 
@@ -64,17 +71,21 @@ def task_3():
     print("GB Python homework. Stage 3. Task 3.")
 
     list_len = symbol_request("Please, set the target list length:  ", int)
+
     third_list = []
-    for i in range(len(list_len)):
+
+    for i in range(list_len):
         third_list.append(round(random.uniform(00.01, 99.99), 2))
+
     cut_list = []
+
     for e in third_list:
-        cut = str(e)
-        add_cut = cut[cut.find(".") + 1:]
-        if len(add_cut) < 2:
-            cut_list.append((int(add_cut)) * 10)
+        cut = str(e)[str(e).find(".") + 1:]
+        if len(cut) < 2:
+            cut_list.append((int(cut)) * 10)
         else:
-            cut_list.append(int(add_cut))
+            cut_list.append(int(cut))
+
     result = max(cut_list) - min(cut_list)
 
     print(f"Your incoming list:  {third_list}. Fractional difference: {result}.")
@@ -92,6 +103,7 @@ def task_4():
     print("GB Python homework. Stage 3. Task 4.")
 
     number = symbol_request("Please, enter target number:  ", int)
+
     print(f"Your number is: {number}, your binary number is: {number: b}.")
 
 
@@ -105,6 +117,7 @@ def task_5():
     print("GB Python homework. Stage 3. Task 5.")
 
     number = symbol_request("Please, enter target number:  ", int)
+
     print(f"Fibonacci list for {number} is:  {fibonacci(number)}.")
 
 
