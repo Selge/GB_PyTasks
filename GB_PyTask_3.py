@@ -62,8 +62,24 @@ def task_3():
 
     print("GB Python homework. Stage 3. Task 3.")
 
-    third_list = list_maker(float)
+    list_len = list_maker(int)
+    third_list = []
+    for i in range(list_len):
+        third_list.append(round(random.uniform(00.01, 99.99), 2))
+    cut_list = []
+    for e in third_list:
+        cut = str(e)
+        add_cut = cut[cut.find(".") + 1:]
+        if len(add_cut) < 2:
+            cut_list.append((int(add_cut)) * 10)
+        else:
+            cut_list.append(int(add_cut))
+    print(third_list)
+    print(cut_list)
+    result = max(cut_list) - min(cut_list)
+    print(result)
 
+    print(f"Your incoming list:  {third_list}. Fractional difference: {result}.")
 
 def task_4():
     """ Задание 4. """
