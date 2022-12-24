@@ -65,7 +65,7 @@ def task_3():
 
     list_len = list_maker(int)
     third_list = []
-    for i in range(list_len):
+    for i in range(len(list_len)):
         third_list.append(round(random.uniform(00.01, 99.99), 2))
     cut_list = []
     for e in third_list:
@@ -112,7 +112,8 @@ def task_5():
 
 
 def fibonacci(digit):
-    if digit in
+    if digit in whatever:
+        pass
 
 
 # In case import doesn't work, please, uncomment the code below, and you'll be all set:
@@ -126,3 +127,7 @@ def fibonacci(digit):
 #         symbol_request(request, datatype)
 #
 #     return symbol
+
+
+if __name__ == '__main__':
+    task_3()
