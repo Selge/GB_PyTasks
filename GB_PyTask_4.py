@@ -76,6 +76,8 @@ def task_5():
     polynom_1 = task_4()
     polynom_2 = task_4()
 
+    with open("file.txt", "r") as file:
+
 # In case import doesn't work, please, uncomment the code below, and you'll be all set:
 # def symbol_request(request, datatype):
 #     request = request
