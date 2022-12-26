@@ -1,4 +1,5 @@
 import random
+
 from GB_PyTask_1 import symbol_request
 from GB_PyTask_3 import list_maker
 
