@@ -17,11 +17,23 @@ def task_1():
 def task_2():
     """ Задание 2. """
 
-#     Задайте натуральное число N. Напишите программу, которая составит список простых множителей числа N.
+# Задайте натуральное число N. Напишите программу, которая составит список простых множителей числа N.
 
     print("GB Python homework. Stage 4. Task 2.")
 
-    number = symbol_request("Please, set the target number:  ", int)
+    number_1 = number_2 = symbol_request("Please, set the target number:  ", int)
+    i = 2
+    list_2 = []
+
+    while i * i <= number_2:
+        while number_2 % i == 0:
+            list_2.append(i)
+            number_2 = number_2 / i
+        i = i + 1
+    if number_2 > 1:
+        list_2.append(number_2)
+
+    print(f"Your number is: {number_1}. The list of prime factors for {number_1} is {list_2}.")
 
 def task_3():
     """ Задание 3. """
@@ -79,4 +91,4 @@ def task_5():
 
 
 if __name__ == '__main__':
-    task_3()
+    task_2()
