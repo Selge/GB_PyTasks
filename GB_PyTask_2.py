@@ -70,7 +70,7 @@ def task_4():
 
     for e in range(n + 1):
         n_list.append(random.randint(-n, n + 1))
-        
+
     print(f"Our list: {n_list}")
 
     # Получаем набор позиций в списке. Я взял четверть всех позиций списка (чтоб было интереснее), поэтому 4
@@ -86,7 +86,7 @@ def task_4():
 
     # Читаем позиции из файла и получаем произведение чисел, стоящих на указанных местах:
     total = 1
-    with open(r"file.txt", "r") as file:
+    with open("file.txt", "r") as file:
         for line in file:
             total *= n_list[int(line)]
     print(f"Total: {total:,.0f}".replace(',', ' '))
