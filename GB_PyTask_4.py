@@ -64,6 +64,7 @@ def task_4():
     k = symbol_request("Please, set the target number:  ", int)
 
 
+
 def task_5():
     """ Задание 5. """
 
@@ -71,6 +72,8 @@ def task_5():
 
     print("GB Python homework. Stage 4. Task 4.")
 
+    polynom_1 = task_4()
+    polynom_2 = task_4()
 
 # In case import doesn't work, please, uncomment the code below, and you'll be all set:
 # def symbol_request(request, datatype):

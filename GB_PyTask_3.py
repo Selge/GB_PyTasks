@@ -147,7 +147,3 @@ def fibonacci(n):
 #         symbol_request(request, datatype)
 #
 #     return symbol
-
-
-if __name__ == '__main__':
-    task_1()
