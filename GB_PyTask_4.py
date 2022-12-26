@@ -1,4 +1,5 @@
 import random
+import itertools
 
 from GB_PyTask_1 import symbol_request
 from GB_PyTask_3 import list_maker
@@ -63,7 +64,15 @@ def task_4():
     print("GB Python homework. Stage 4. Task 4.")
 
     k = symbol_request("Please, set the target number:  ", int)
+    task_list = [random.randint(0, 101) for _ in range(k + 1)]
 
+    polynome = '+'.join([f'{(j, "")[j == 1]}x^{i}' for i, j in enumerate(task_list) if j][::-1]) + ' = 0'
+    polynome += ('', '1')[polynome[-1] == '+']
+    polynome = (polynome, polynome[:-2])[polynome[-2:] == '^1']
+    polynome = polynome.replace('x^1+', 'x+')
+    polynome = polynome.replace('x^0', '')
+
+    return polynome
 
 
 def task_5():
@@ -72,11 +81,19 @@ def task_5():
 # Даны два файла, в каждом из которых находится запись многочлена. Задача - сформировать файл, содержащий сумму многочленов.
 
     print("GB Python homework. Stage 4. Task 4.")
+    #
+    # polynom_1 = task_4()
+    # polynom_2 = task_4()
 
-    polynom_1 = task_4()
-    polynom_2 = task_4()
+    # with open("file.txt", "r") as file:
 
-    with open("file.txt", "r") as file:
+def data_record():
+    ...
+
+
+def data_read():
+    ...
+
 
 # In case import doesn't work, please, uncomment the code below, and you'll be all set:
 
@@ -101,4 +118,4 @@ def task_5():
 
 
 if __name__ == '__main__':
-    task_2()
+    task_4()
