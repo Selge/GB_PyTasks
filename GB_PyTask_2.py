@@ -48,9 +48,11 @@ def task_3():
     n = symbol_request("Please, set up target number:  ", int)
     n_dict = {}
     n_list = []
+
     for i in range(1, n + 1):
         n_dict[i] = round(((1 + 1 / i) ** i), 2)
         n_list.append(n_dict[i])
+
     print(f"Sequence: {n_dict}\nSum:  {sum(n_list)}")
 
 
@@ -65,8 +67,10 @@ def task_4():
     # Получаем желаемый список.
     n = symbol_request("Please, set up the target value:  ", int)
     n_list = []
+
     for e in range(n + 1):
         n_list.append(random.randint(-n, n + 1))
+        
     print(f"Our list: {n_list}")
 
     # Получаем набор позиций в списке. Я взял четверть всех позиций списка (чтоб было интереснее), поэтому 4
