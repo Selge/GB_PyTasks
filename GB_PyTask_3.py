@@ -6,10 +6,7 @@ from GB_PyTask_1 import symbol_request
 def list_maker(digit_type):
     list_len = symbol_request("Please, set the target list length:  ", digit_type)
 
-    task_list = []
-
-    for i in range(list_len):
-        task_list.append(random.randint(0, 100))
+    task_list = [random.randint(0, 100) for i in range(list_len)]
 
     return task_list
 
