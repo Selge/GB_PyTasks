@@ -12,7 +12,8 @@ def task_1():
 
     print("GB Python homework. Stage 4. Task 1.")
 
-    number = symbol_request("Please, set the target number:  ", int)
+    number = symbol_request("Please, set the target number:  ", float)
+
 
 def task_2():
     """ Задание 2. """
@@ -35,10 +36,12 @@ def task_2():
 
     print(f"Your number is: {number_1}. The list of prime factors for {number_1} is {list_2}.")
 
+
 def task_3():
     """ Задание 3. """
 
-#     Задайте последовательность чисел. Напишите программу, которая выведет список неповторяющихся элементов исходной последовательности.
+# Задайте последовательность чисел.
+# Напишите программу, которая выведет список неповторяющихся элементов исходной последовательности.
 
     print("GB Python homework. Stage 4. Task 3.")
 
