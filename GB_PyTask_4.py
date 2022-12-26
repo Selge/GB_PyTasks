@@ -79,6 +79,7 @@ def task_5():
     with open("file.txt", "r") as file:
 
 # In case import doesn't work, please, uncomment the code below, and you'll be all set:
+
 # def symbol_request(request, datatype):
 #     request = request
 #     datatype = datatype
@@ -89,14 +90,14 @@ def task_5():
 #         symbol_request(request, datatype)
 #
 #     return symbol
+
+
+#def list_maker(digit_type):
+#   list_len = symbol_request("Please, set the target list length:  ", digit_type)
 #
+#   task_list = [random.randint(0, 100) for _ in range(list_len)]
 #
-# def list_maker(digit_type):
-#     list_len = symbol_request("Please, set the target list length:  ", digit_type)
-#     task_list = []
-#     for i in range(list_len):
-#         task_list.append(random.randint(0, 100))
-#     return task_list
+#   return task_list
 
 
 if __name__ == '__main__':
