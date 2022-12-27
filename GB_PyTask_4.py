@@ -1,4 +1,6 @@
 import random
+import math
+from math import pi
 import itertools
 
 from GB_PyTask_1 import symbol_request
@@ -14,21 +16,37 @@ def task_1():
 
     print("GB Python homework. Stage 4. Task 1.")
 
-    number = symbol_request("Please, set the target number:  ", float)
+    request = str(input("""Please, select an option: 
+                        'v' - to calculate any value, 
+                        'p' - to calculate the 'π' value
+                        'q' - to quit
+                        """)).lower()
+    match request:
+        case 'v':
+            num = symbol_request("Please, set the target value:  ", float)
+        case 'p':
+            num = pi
+        case _:
+            print("Please, use the built-in options!")
+            task_1()
 
-    def calc_pi(eps=1.0e-5):
-        s = 0
-        d = 1
-        sgn = 1
-        while True:
-            a = 4 / d
-            s = s + sgn * a
-            if a < eps:
-                return s
-            sgn = -sgn
-            d = d + 2
+    d = symbol_request("Please, set the target accuracy:  ", float)
 
-    print(calc_pi())
+    accuracy_min = 10 ** -1
+    accuracy_max = 10 ** -10
+
+    s = 0
+    d = 1
+    sgn = 1
+    while True:
+        a = 4 / d
+        s = s + sgn * a
+        if accuracy_min <= a <= accuracy_max:
+            return s
+        sgn = -sgn
+        d = d + 2
+
+    print(s)
 
 def task_2():
     """ Задание 2. """
@@ -79,13 +97,7 @@ def task_4():
     k = symbol_request("Please, set the target number:  ", int)
     task_list = [random.randint(0, 101) for _ in range(k + 1)]
 
-    polynome = '+'.join([f'{(j, "")[j == 1]}x^{i}' for i, j in enumerate(task_list) if j][::-1]) + ' = 0'
-    polynome += ('', '1')[polynome[-1] == '+']
-    polynome = (polynome, polynome[:-2])[polynome[-2:] == '^1']
-    polynome = polynome.replace('x^1+', 'x+')
-    polynome = polynome.replace('x^0', '')
-
-    return polynome
+    data_record(create_polynomial(k, task_list))
 
 
 def task_5():
@@ -94,11 +106,11 @@ def task_5():
 # Даны два файла, в каждом из которых находится запись многочлена. Задача - сформировать файл, содержащий сумму многочленов.
 
     print("GB Python homework. Stage 4. Task 4.")
-    #
-    # polynom_1 = task_4()
-    # polynom_2 = task_4()
 
-    # with open("file.txt", "r") as file:
+    polynom_1 = task_4()
+    polynom_2 = task_4()
+
+
 
     # нахождение суммы многочлена
 
@@ -171,12 +183,26 @@ def task_5():
             num = int(k[:i])
         return num
 
-def data_record():
-    ...
+
+def data_record(polynomial):
+    with open(f'{polynomial}.txt', 'w') as file:
+        file.write(polynomial)
 
 
-def data_read():
-    ...
+def data_read(filename):
+    with open(f'{filename}.txt', 'w') as file:
+        file.readlines()
+
+
+def create_polynomial(k, list_num):
+
+    polynome = '+'.join([f'{(j, "")[j == 1]}x^{i}' for i, j in enumerate(list_num) if j][::-1]) + ' = 0'
+    polynome += ('', '1')[polynome[-1] == '+']
+    polynome = (polynome, polynome[:-2])[polynome[-2:] == '^1']
+    polynome = polynome.replace('x^1+', 'x+')
+    polynome = polynome.replace('x^0', '')
+
+    return polynome
 
 
 # In case import doesn't work, please, uncomment the code below, and you'll be all set:
@@ -202,4 +228,4 @@ def data_read():
 
 
 if __name__ == '__main__':
-    task_4()
+    task_1()
