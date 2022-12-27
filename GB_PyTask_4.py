@@ -31,10 +31,10 @@ def task_1():
             print("Please, use the built-in options!")
             task_1()
 
-    d = symbol_request("Please, set the target accuracy:  ", float)
+    d_accuracy_min = 10 ** -1
+    d_accuracy_max = 10 ** -10
 
-    accuracy_min = 10 ** -1
-    accuracy_max = 10 ** -10
+    d = random.uniform(d_accuracy_min, d_accuracy_max)
 
     s = 0
     d = 1
