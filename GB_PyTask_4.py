@@ -1,7 +1,6 @@
 import random
-import math
+
 from math import pi
-import itertools
 
 from GB_PyTask_1 import symbol_request
 from GB_PyTask_3 import list_maker
@@ -26,6 +25,8 @@ def task_1():
             num = symbol_request("Please, set the target value:  ", float)
         case 'p':
             num = pi
+        case 'q':
+            exit()
         case _:
             print("Please, use the built-in options!")
             task_1()
