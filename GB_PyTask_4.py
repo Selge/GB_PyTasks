@@ -91,8 +91,9 @@ def task_4():
 
     k = symbol_request("Please, set the target number:  ", int)
     task_list = [random.randint(0, 101) for _ in range(k + 1)]
+    filename = str(input("Please, set the file name:  "))
 
-    data_record(create_polynomial(k, task_list))
+    data_record(create_polynomial(k, task_list), filename)
 
 
 def task_5():
@@ -100,87 +101,84 @@ def task_5():
 
 # Даны два файла, в каждом из которых находится запись многочлена. Задача - сформировать файл, содержащий сумму многочленов.
 
-    print("GB Python homework. Stage 4. Task 4.")
+    print("GB Python homework. Stage 4. Task 5.")
 
-    polynom_1 = task_4()
-    polynom_2 = task_4()
-
-
+    polynomial_1 = task_4()
+    polynomial_2 = task_4()
 
     # нахождение суммы многочлена
 
-    with open('file34_1.txt', 'r') as data:
-        st1 = data.readlines()
-    with open('file34_2.txt', 'r') as data:
-        st2 = data.readlines()
-    print(f"Первый многочлен {st1}")
-    print(f"Второй многочлен {st2}")
-    lst1 = calc_mn(st1)
-    lst2 = calc_mn(st2)
-    ll = len(lst1)
-    if len(lst1) > len(lst2):
-        ll = len(lst2)
-    lst_new = [lst1[i] + lst2[i] for i in range(ll)]
-    if len(lst1) > len(lst2):
-        mm = len(lst1)
-        for i in range(ll, mm):
-            lst_new.append(lst1[i])
-    else:
-        mm = len(lst2)
-        for i in range(ll, mm):
-            lst_new.append(lst2[i])
-    write_file("file34_res.txt", create_str(lst_new))
-    with open('file34_res.txt', 'r') as data:
-        st3 = data.readlines()
-    print(f"Результирующий многочлен {st3}")
+    # with open('file34_1.txt', 'r') as data:
+    #     st1 = data.readlines()
+    # with open('file34_2.txt', 'r') as data:
+    #     st2 = data.readlines()
+    # print(f"Первый многочлен {st1}")
+    # print(f"Второй многочлен {st2}")
+    # lst1 = calc_mn(st1)
+    # lst2 = calc_mn(st2)
+    # ll = len(lst1)
+    # if len(lst1) > len(lst2):
+    #     ll = len(lst2)
+    # lst_new = [lst1[i] + lst2[i] for i in range(ll)]
+    # if len(lst1) > len(lst2):
+    #     mm = len(lst1)
+    #     for i in range(ll, mm):
+    #         lst_new.append(lst1[i])
+    # else:
+    #     mm = len(lst2)
+    #     for i in range(ll, mm):
+    #         lst_new.append(lst2[i])
+    # write_file("file34_res.txt", create_str(lst_new))
+    # with open('file34_res.txt', 'r') as data:
+    #     st3 = data.readlines()
+    # print(f"Результирующий многочлен {st3}")
 
     # разбор многочлена и получение его коэффициентов
 
-    def calc_mn(st):
-        st = st[0].replace(' ', '').split('=')
-        st = st[0].split('+')
-        lst = []
-        l = len(st)
-        k = 0
-        if sq_mn(st[-1]) == -1:
-            lst.append(int(st[-1]))
-            l -= 1
-            k = 1
-        i = 1  # степень
-        ii = l - 1  # индекс
-        while ii >= 0:
-            if sq_mn(st[ii]) != -1 and sq_mn(st[ii]) == i:
-                lst.append(k_mn(st[ii]))
-                ii -= 1
-                i += 1
-            else:
-                lst.append(0)
-                i += 1
+    # def calc_mn(st):
+    #     st = st[0].replace(' ', '').split('=')
+    #     st = st[0].split('+')
+    #     lst = []
+    #     l = len(st)
+    #     k = 0
+    #     if sq_mn(st[-1]) == -1:
+    #         lst.append(int(st[-1]))
+    #         l -= 1
+    #         k = 1
+    #     i = 1  # степень
+    #     ii = l - 1  # индекс
+    #     while ii >= 0:
+    #         if sq_mn(st[ii]) != -1 and sq_mn(st[ii]) == i:
+    #             lst.append(k_mn(st[ii]))
+    #             ii -= 1
+    #             i += 1
+    #         else:
+    #             lst.append(0)
+    #             i += 1
+    #
+    #     return lst
+    #
+    # # получение степени многочлена
+    # def sq_mn(k):
+    #     if 'x^' in k:
+    #         i = k.find('^')
+    #         num = int(k[i + 1:])
+    #     elif ('x' in k) and ('^' not in k):
+    #         num = 1
+    #     else:
+    #         num = -1
+    #     return num
+    #
+    # # получение коэффицента члена многочлена
+    #
+    # def k_mn(k):
+    #     if 'x' in k:
+    #         i = k.find('x')
+    #         num = int(k[:i])
+    #     return num
 
-        return lst
-
-    # получение степени многочлена
-    def sq_mn(k):
-        if 'x^' in k:
-            i = k.find('^')
-            num = int(k[i + 1:])
-        elif ('x' in k) and ('^' not in k):
-            num = 1
-        else:
-            num = -1
-        return num
-
-    # получение коэффицента члена многочлена
-
-    def k_mn(k):
-        if 'x' in k:
-            i = k.find('x')
-            num = int(k[:i])
-        return num
-
-
-def data_record(polynomial):
-    with open(f'{polynomial}.txt', 'w') as file:
+def data_record(polynomial, filename):
+    with open(f'{filename}.txt', 'w') as file:
         file.write(polynomial)
 
 
@@ -191,13 +189,13 @@ def data_read(filename):
 
 def create_polynomial(k, list_num):
 
-    polynome = '+'.join([f'{(j, "")[j == 1]}x^{i}' for i, j in enumerate(list_num) if j][::-1]) + ' = 0'
-    polynome += ('', '1')[polynome[-1] == '+']
-    polynome = (polynome, polynome[:-2])[polynome[-2:] == '^1']
-    polynome = polynome.replace('x^1+', 'x+')
-    polynome = polynome.replace('x^0', '')
+    polynomial = '+'.join([f'{(j, "")[j == 1]}x^{i}' for i, j in enumerate(list_num) if j][::-1]) + ' = 0'
+    polynomial += ('', '1')[polynomial[-1] == '+']
+    polynomial = (polynomial, polynomial[:-2])[polynomial[-2:] == '^1']
+    polynomial = polynomial.replace('x^1+', 'x+')
+    polynomial = polynomial.replace('x^0', '')
 
-    return polynome
+    return polynomial
 
 
 # In case import doesn't work, please, uncomment the code below, and you'll be all set:
@@ -223,4 +221,4 @@ def create_polynomial(k, list_num):
 
 
 if __name__ == '__main__':
-    task_1()
+    task_5()
