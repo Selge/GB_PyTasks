@@ -7,7 +7,7 @@ from GB_PyTask_1 import symbol_request
 from GB_PyTask_3 import list_maker
 
 
-def task_1():
+def task_1() -> None:
     """ Задание 1. """
 
 # Вычислить число c заданной точностью d
@@ -43,7 +43,8 @@ def task_1():
 
     print(f"The target value {num}  with accuracy {d_accuracy} is: {result}.")
 
-def task_2():
+
+def task_2() -> None:
     """ Задание 2. """
 
 # Задайте натуральное число N. Напишите программу, которая составит список простых множителей числа N.
@@ -65,7 +66,7 @@ def task_2():
     print(f"Your number is: {number_1}. The list of prime factors for {number_1} is {list_2}.")
 
 
-def task_3():
+def task_3() -> None:
     """ Задание 3. """
 
 # Задайте последовательность чисел.
@@ -79,7 +80,7 @@ def task_3():
     print(f"Your incoming list is: {numbers}.\nThe outcoming list is: {uniq_numbers}.")
 
 
-def task_4():
+def task_4() -> None:
     """ Задание 4. """
 
 #     Задана натуральная степень k. Сформировать случайным образом список коэффициентов (значения от 0 до 100)
@@ -105,15 +106,14 @@ def task_5():
 
     polynomial_1 = task_4()
     polynomial_2 = task_4()
+    st1 = data_read('polynomial_1')
+    st2 = data_read('polynomial_2')
+
+    print(f"Первый многочлен {st1}")
+    print(f"Второй многочлен {st2}")
 
     # нахождение суммы многочлена
 
-    # with open('file34_1.txt', 'r') as data:
-    #     st1 = data.readlines()
-    # with open('file34_2.txt', 'r') as data:
-    #     st2 = data.readlines()
-    # print(f"Первый многочлен {st1}")
-    # print(f"Второй многочлен {st2}")
     # lst1 = calc_mn(st1)
     # lst2 = calc_mn(st2)
     # ll = len(lst1)
@@ -177,17 +177,18 @@ def task_5():
     #         num = int(k[:i])
     #     return num
 
-def data_record(polynomial, filename):
+def data_record(polynomial, filename) -> None:
     with open(f'{filename}.txt', 'w') as file:
         file.write(polynomial)
 
 
-def data_read(filename):
-    with open(f'{filename}.txt', 'w') as file:
-        file.readlines()
+def data_read(filename) -> str:
+    with open(f'{filename}.txt', 'r') as file:
+        data = file.readlines()
+    return data
 
 
-def create_polynomial(k, list_num):
+def create_polynomial(k, list_num) -> str:
 
     polynomial = '+'.join([f'{(j, "")[j == 1]}x^{i}' for i, j in enumerate(list_num) if j][::-1]) + ' = 0'
     polynomial += ('', '1')[polynomial[-1] == '+']
