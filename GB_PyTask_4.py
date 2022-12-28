@@ -1,6 +1,7 @@
 import random
-
 from math import pi
+from decimal import Decimal
+from decimal import getcontext
 
 from GB_PyTask_1 import symbol_request
 from GB_PyTask_3 import list_maker
@@ -31,23 +32,16 @@ def task_1():
             print("Please, use the built-in options!")
             task_1()
 
-    d_accuracy_min = 10 ** -1
-    d_accuracy_max = 10 ** -10
+    d_accuracy = symbol_request("Please, set the target accuracy:  ", float)
 
-    d = random.uniform(d_accuracy_min, d_accuracy_max)
+    getcontext().prec = len(str(d_accuracy).replace('.', ''))
+    result = sum(1 / Decimal(16) ** k *
+               (Decimal(4) / (8 * k + 1) -
+                Decimal(2) / (8 * k + 4) -
+                Decimal(1) / (8 * k + 5) -
+                Decimal(1) / (8 * k + 6)) for k in range(len(str(d_accuracy).replace('.', ''))))
 
-    s = 0
-    d = 1
-    sgn = 1
-    while True:
-        a = 4 / d
-        s = s + sgn * a
-        if accuracy_min <= a <= accuracy_max:
-            return s
-        sgn = -sgn
-        d = d + 2
-
-    print(s)
+    print(result)
 
 def task_2():
     """ Задание 2. """
