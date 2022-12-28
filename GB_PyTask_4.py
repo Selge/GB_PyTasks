@@ -41,7 +41,7 @@ def task_1():
                 Decimal(1) / (8 * k + 5) -
                 Decimal(1) / (8 * k + 6)) for k in range(len(str(d_accuracy).replace('.', ''))))
 
-    print(result)
+    print(f"The target value {num}  with accuracy {d_accuracy} is: {result}.")
 
 def task_2():
     """ Задание 2. """
