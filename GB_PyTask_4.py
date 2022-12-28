@@ -115,6 +115,9 @@ def task_5():
     # нахождение суммы многочлена
 
     # lst1 = calc_mn(st1)
+
+
+
     # lst2 = calc_mn(st2)
     # ll = len(lst1)
     # if len(lst1) > len(lst2):
@@ -193,8 +196,7 @@ def create_polynomial(k, list_num) -> str:
     polynomial = '+'.join([f'{(j, "")[j == 1]}x^{i}' for i, j in enumerate(list_num) if j][::-1]) + ' = 0'
     polynomial += ('', '1')[polynomial[-1] == '+']
     polynomial = (polynomial, polynomial[:-2])[polynomial[-2:] == '^1']
-    polynomial = polynomial.replace('x^1+', 'x+')
-    polynomial = polynomial.replace('x^0', '')
+    polynomial = polynomial.replace('x^1+', 'x+').replace('x^0', '')
 
     return polynomial
 
