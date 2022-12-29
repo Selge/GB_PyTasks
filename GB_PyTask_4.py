@@ -94,7 +94,7 @@ def task_4() -> None:
     k = symbol_request("Please, set the target natural degree:  ", int)
     task_list = [random.randint(0, 101) for _ in range(k + 1)]
 
-    data_record(create_polynomial(k, task_list), filename())
+    data_record(polynomial_create(k, task_list), filename())
 
 
 def task_5() -> None:
@@ -105,8 +105,7 @@ def task_5() -> None:
 
     print("GB Python homework. Stage 4. Task 5.")
 
-    polynomial_1 = task_4()
-    polynomial_2 = task_4()
+    task_4(), task_4()
 
     poly_blank_1 = data_read(str(input("Please, input the target filename:  ")))
     poly_blank_2 = data_read(str(input("Please, input the target filename:  ")))
@@ -136,11 +135,9 @@ def polynomial_sum(poly_blank) -> list:
     poly_blank = poly_blank[0].split('+')
     poly_lst = []
     l = len(poly_blank)
-    k = 0
     if polynomial_degree(poly_blank[-1]) == -1:
         poly_lst.append(int(poly_blank[-1]))
         l -= 1
-        k = 1
     i = 1
     ii = l-1
     while ii >= 0:
@@ -173,7 +170,7 @@ def polynomial_coefficient(k) -> int:
     return num
 
 
-def polynomial_reassembling(poly_list) -> list:
+def polynomial_reassembling(poly_list) -> str:
     polst = poly_list[::-1]
     total = ''
     if len(polst) < 1:
@@ -195,7 +192,7 @@ def polynomial_reassembling(poly_list) -> list:
     return total
 
 
-def create_polynomial(k, list_num) -> str:
+def polynomial_create(k, list_num) -> str:
 
     polynomial = ' + '.join([f'{(a, "")[a == 1]}x^{i}' for i, a in enumerate(list_num) if a][::-1]) + ' = 0'
     polynomial += ('', '1')[polynomial[-1] == ' + ']
@@ -240,3 +237,7 @@ def data_read(filename) -> str:
 #   list_len = symbol_request("Please, set the target list length:  ", digit_type)
 #   task_list = [random.randint(0, 100) for _ in range(list_len)]
 #   return task_list
+
+
+if __name__ == '__main__':
+    task_5()
