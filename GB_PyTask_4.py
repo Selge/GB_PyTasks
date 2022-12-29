@@ -107,6 +107,7 @@ def task_5() -> None:
 
     polynomial_1 = task_4()
     polynomial_2 = task_4()
+    
     poly_blank_1 = data_read(str(input("Please, input the target filename:  ")))
     poly_blank_2 = data_read(str(input("Please, input the target filename:  ")))
 
@@ -172,7 +173,6 @@ def polynomial_coefficient(k):
     return num
 
 
-# создание многочлена в виде строки
 def polynomial_reassembling(poly_list):
     polst = poly_list[::-1]
     total = ''
