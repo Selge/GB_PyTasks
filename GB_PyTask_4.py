@@ -107,7 +107,7 @@ def task_5() -> None:
 
     polynomial_1 = task_4()
     polynomial_2 = task_4()
-    
+
     poly_blank_1 = data_read(str(input("Please, input the target filename:  ")))
     poly_blank_2 = data_read(str(input("Please, input the target filename:  ")))
 
@@ -242,7 +242,3 @@ def data_read(filename) -> str:
 #   task_list = [random.randint(0, 100) for _ in range(list_len)]
 #
 #   return task_list
-
-
-if __name__ == '__main__':
-    task_5()
