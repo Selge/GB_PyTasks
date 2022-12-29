@@ -131,7 +131,7 @@ def task_5() -> None:
     data_record(poly_list_3, filename())
 
 
-def polynomial_sum(poly_blank):
+def polynomial_sum(poly_blank) -> list:
     poly_blank = poly_blank[0].replace(' ', '').split('=')
     poly_blank = poly_blank[0].split('+')
     lst = []
@@ -155,7 +155,7 @@ def polynomial_sum(poly_blank):
     return lst
 
 
-def polynomial_degree(e):
+def polynomial_degree(e) -> int:
     if 'x^' in e:
         i = e.find('^')
         num = int(e[i+1:])
@@ -166,14 +166,14 @@ def polynomial_degree(e):
     return num
 
 
-def polynomial_coefficient(k):
+def polynomial_coefficient(k) -> int:
     if 'x' in k:
         i = k.find('x')
         num = int(k[:i])
     return num
 
 
-def polynomial_reassembling(poly_list):
+def polynomial_reassembling(poly_list) -> list:
     polst = poly_list[::-1]
     total = ''
     if len(polst) < 1:
@@ -238,7 +238,5 @@ def data_read(filename) -> str:
 
 #def list_maker(digit_type):
 #   list_len = symbol_request("Please, set the target list length:  ", digit_type)
-#
 #   task_list = [random.randint(0, 100) for _ in range(list_len)]
-#
 #   return task_list
