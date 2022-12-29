@@ -134,25 +134,25 @@ def task_5() -> None:
 def polynomial_sum(poly_blank) -> list:
     poly_blank = poly_blank[0].replace(' ', '').split('=')
     poly_blank = poly_blank[0].split('+')
-    lst = []
+    poly_lst = []
     l = len(poly_blank)
     k = 0
     if polynomial_degree(poly_blank[-1]) == -1:
-        lst.append(int(poly_blank[-1]))
+        poly_lst.append(int(poly_blank[-1]))
         l -= 1
         k = 1
     i = 1
     ii = l-1
     while ii >= 0:
         if polynomial_degree(poly_blank[ii]) != -1 and polynomial_degree(poly_blank[ii]) == i:
-            lst.append(polynomial_coefficient(poly_blank[ii]))
+            poly_lst.append(polynomial_coefficient(poly_blank[ii]))
             ii -= 1
             i += 1
         else:
-            lst.append(0)
+            poly_lst.append(0)
             i += 1
 
-    return lst
+    return poly_lst
 
 
 def polynomial_degree(e) -> int:
