@@ -237,7 +237,3 @@ def data_read(filename) -> str:
 #   list_len = symbol_request("Please, set the target list length:  ", digit_type)
 #   task_list = [random.randint(0, 100) for _ in range(list_len)]
 #   return task_list
-
-
-if __name__ == '__main__':
-    task_5()
